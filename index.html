@@ -481,12 +481,12 @@
 
 .featured-section {
   margin-top: 72px;
-  padding: clamp(28px, 4vw, 44px);
+  padding: clamp(28px, 4vw, 46px);
   border: 1px solid rgba(243, 194, 139, 0.18);
   border-radius: 34px;
   background:
-    radial-gradient(circle at 50% 0%, rgba(201, 38, 79, 0.18), transparent 36%),
-    linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.014));
+    radial-gradient(circle at 50% 0%, rgba(201, 38, 79, 0.16), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,0.042), rgba(255,255,255,0.012));
   box-shadow:
     0 22px 80px rgba(0,0,0,0.30),
     inset 0 0 0 1px rgba(255,255,255,0.018);
@@ -494,8 +494,8 @@
 
 .featured-header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 38px;
+  max-width: 760px;
+  margin: 0 auto 42px;
 }
 
 .featured-kicker {
@@ -523,64 +523,82 @@
   color: #d9b9a0;
 }
 
-.featured-grid {
+.featured-list {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
-  gap: 18px;
+  gap: 16px;
 }
 
 .featured-card {
-  min-height: 260px;
-  padding: 28px;
-  border: 1px solid rgba(243, 194, 139, 0.16);
-  border-radius: 28px;
+  min-height: auto;
+  padding: 24px 26px;
+  border: 1px solid rgba(243, 194, 139, 0.15);
+  border-radius: 24px;
   background:
-    radial-gradient(circle at 85% 10%, rgba(201, 38, 79, 0.20), transparent 36%),
-    rgba(255,255,255,0.025);
+    radial-gradient(circle at 92% 20%, rgba(201, 38, 79, 0.18), transparent 28%),
+    rgba(255,255,255,0.022);
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.featured-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(243, 194, 139, 0.30);
+  background:
+    radial-gradient(circle at 92% 20%, rgba(201, 38, 79, 0.24), transparent 30%),
+    rgba(255,255,255,0.032);
+  box-shadow: 0 18px 56px rgba(0,0,0,0.24);
 }
 
 .featured-card.main {
   background:
-    radial-gradient(circle at 82% 12%, rgba(201, 38, 79, 0.24), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,0.052), rgba(255,255,255,0.014));
+    radial-gradient(circle at 92% 20%, rgba(201, 38, 79, 0.22), transparent 30%),
+    linear-gradient(90deg, rgba(255,255,255,0.046), rgba(255,255,255,0.014));
 }
 
 .featured-card .number {
   display: inline-flex;
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(243, 194, 139, 0.24);
+  border: 1px solid rgba(243, 194, 139, 0.26);
   border-radius: 50%;
-  margin-bottom: 22px;
   color: #f3c28b;
   font-family: "Lato", Arial, sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
 }
 
-.featured-card h3 {
+.featured-content h3 {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.8rem;
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
   font-weight: 600;
   line-height: 1.05;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   color: #fff6ed;
 }
 
-.featured-card p {
-  font-size: 0.98rem;
-  line-height: 1.7;
+.featured-content p {
+  font-size: 0.96rem;
+  line-height: 1.65;
   color: #d7b7a4;
+  max-width: 660px;
 }
 
 .featured-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-top: 24px;
+  white-space: nowrap;
   font-family: "Lato", Arial, sans-serif;
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -594,12 +612,33 @@
 }
 
 @media (max-width: 900px) {
-  .featured-grid {
+  .featured-section {
+    margin-top: 56px;
+  }
+
+  .featured-card {
+    grid-template-columns: 52px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .featured-link {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 560px) {
+  .featured-card {
     grid-template-columns: 1fr;
   }
 
-  .featured-section {
-    margin-top: 56px;
+  .featured-link {
+    grid-column: auto;
   }
 }
     
@@ -743,7 +782,7 @@
 </section>
 
 
-    <section class="featured-section">
+   <section class="featured-section">
   <div class="featured-header">
     <span class="featured-kicker">Em destaque no Rubi</span>
     <h2>O portal já começou a brilhar.</h2>
@@ -753,36 +792,42 @@
     </p>
   </div>
 
-  <div class="featured-grid">
+  <div class="featured-list">
     <article class="featured-card main">
       <span class="number">01</span>
-      <h3>Carta de abertura</h3>
-      <p>
-        O Rubi Literário nasce para acolher histórias que carregam presença.
-        Não queremos apenas textos bonitos. Queremos brilho, risco, imagem,
-        verdade e memória.
-      </p>
+      <div class="featured-content">
+        <h3>Carta de abertura</h3>
+        <p>
+          O Rubi Literário nasce para acolher histórias que carregam presença.
+          Não queremos apenas textos bonitos. Queremos brilho, risco, imagem,
+          verdade e memória.
+        </p>
+      </div>
       <span class="featured-link">Ler em breve</span>
     </article>
 
     <article class="featured-card">
       <span class="number">02</span>
-      <h3>Fragmentos do Rubi</h3>
-      <p>
-        O primeiro concurso cultural de minicontos está sendo lapidado.
-        Em breve, novas vozes poderão enviar histórias curtas para serem
-        reveladas pela curadoria.
-      </p>
+      <div class="featured-content">
+        <h3>Fragmentos do Rubi</h3>
+        <p>
+          O primeiro concurso cultural de minicontos está sendo lapidado.
+          Em breve, novas vozes poderão enviar histórias curtas para serem
+          reveladas pela curadoria.
+        </p>
+      </div>
       <span class="featured-link">Acompanhar</span>
     </article>
 
     <article class="featured-card">
       <span class="number">03</span>
-      <h3>Biblioteca Rubra</h3>
-      <p>
-        Uma futura galeria de obras, autores independentes, leituras marcantes
-        e achados literários apresentados com cuidado editorial.
-      </p>
+      <div class="featured-content">
+        <h3>Biblioteca Rubra</h3>
+        <p>
+          Uma futura galeria de obras, autores independentes, leituras marcantes
+          e achados literários apresentados com cuidado editorial.
+        </p>
+      </div>
       <span class="featured-link">Explorar depois</span>
     </article>
   </div>
