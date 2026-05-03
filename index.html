@@ -227,27 +227,29 @@
     }
 
     .voice-section {
-  margin-top: 34px;
-  margin-bottom: 78px;
-  padding: clamp(28px, 4vw, 48px);
-  border: 1px solid rgba(243, 194, 139, 0.2);
-  border-radius: 34px;
+  margin-top: 38px;
+  margin-bottom: 82px;
+  padding: clamp(30px, 4vw, 52px);
+  border: 1px solid rgba(243, 194, 139, 0.18);
+  border-radius: 36px;
   background:
-    radial-gradient(circle at 18% 50%, rgba(201, 38, 79, 0.22), transparent 34%),
-    linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
+    radial-gradient(circle at 18% 50%, rgba(201, 38, 79, 0.20), transparent 32%),
+    radial-gradient(circle at 70% 20%, rgba(243, 194, 139, 0.05), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.016));
   box-shadow:
-    0 24px 80px rgba(0,0,0,0.32),
-    inset 0 0 0 1px rgba(255,255,255,0.025);
+    0 26px 85px rgba(0,0,0,0.34),
+    inset 0 0 0 1px rgba(255,255,255,0.02);
   position: relative;
   overflow: hidden;
 }
 
+
 .voice-section::before {
   content: "";
   position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(243, 194, 139, 0.08);
-  border-radius: 26px;
+  inset: 16px;
+  border: 1px solid rgba(243, 194, 139, 0.07);
+  border-radius: 28px;
   pointer-events: none;
 }
 
@@ -265,19 +267,19 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 360px;
+  min-height: 390px;
 }
 
 .avatar-frame::before {
   content: "";
   position: absolute;
-  width: min(330px, 80vw);
-  height: min(330px, 80vw);
+  width: min(360px, 82vw);
+  height: min(360px, 82vw);
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(255, 55, 105, 0.28), transparent 58%),
-    radial-gradient(circle, rgba(243, 194, 139, 0.10), transparent 68%);
-  filter: blur(7px);
+    radial-gradient(circle, rgba(255, 55, 105, 0.22), transparent 58%),
+    radial-gradient(circle, rgba(243, 194, 139, 0.08), transparent 70%);
+  filter: blur(10px);
 }
 
 .avatar-frame::after {
@@ -291,16 +293,18 @@
 
 .avatar-image {
   position: relative;
-  width: min(300px, 100%);
+  width: min(320px, 100%);
   display: block;
   object-fit: contain;
+  transform: translateY(-8px);
   filter:
-    drop-shadow(0 0 22px rgba(255, 52, 103, 0.18))
-    drop-shadow(0 22px 36px rgba(0, 0, 0, 0.38));
+    drop-shadow(0 0 20px rgba(255, 52, 103, 0.14))
+    drop-shadow(0 24px 38px rgba(0, 0, 0, 0.38));
 }
 
 .voice-content {
-  max-width: 720px;
+  max-width: 700px;
+  padding-top: 4px;
 }
 
 .voice-tag {
@@ -313,28 +317,30 @@
 }
 
 .voice-title {
-  font-size: clamp(2.2rem, 4vw, 4.1rem);
+  font-size: clamp(2.2rem, 4vw, 4rem);
   font-weight: 400;
   line-height: 0.98;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
+  max-width: 10ch;
   color: #fff2e8;
-  text-shadow: 0 0 28px rgba(208, 43, 82, 0.16);
+  text-shadow: 0 0 26px rgba(208, 43, 82, 0.14);
 }
 
 .voice-quote {
-  font-size: clamp(1.25rem, 2.1vw, 2rem);
+  font-size: clamp(1.2rem, 2vw, 1.95rem);
   line-height: 1.25;
   font-style: italic;
   color: #f1cfb0;
   margin-bottom: 24px;
+  max-width: 18ch;
 }
 
 .voice-text {
   font-size: 1.02rem;
-  line-height: 1.75;
+  line-height: 1.82;
   color: #d9b9a0;
-  max-width: 650px;
-  margin-bottom: 22px;
+  max-width: 620px;
+  margin-bottom: 24px;
 }
 
 .voice-signature {
@@ -363,9 +369,12 @@
   }
 
   .avatar-frame {
-    min-height: 310px;
-  }
+  min-height: 320px;
+}
 
+.avatar-image {
+  transform: none;
+}
   .voice-content,
   .voice-text {
     margin-left: auto;
