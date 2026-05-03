@@ -478,6 +478,131 @@
     display: none;
   }
 }
+
+.featured-section {
+  margin-top: 72px;
+  padding: clamp(28px, 4vw, 44px);
+  border: 1px solid rgba(243, 194, 139, 0.18);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(201, 38, 79, 0.18), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.014));
+  box-shadow:
+    0 22px 80px rgba(0,0,0,0.30),
+    inset 0 0 0 1px rgba(255,255,255,0.018);
+}
+
+.featured-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 38px;
+}
+
+.featured-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #f3c28b;
+}
+
+.featured-header h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 4.1rem);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 14px;
+  color: #fff2e8;
+}
+
+.featured-header p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #d9b9a0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 18px;
+}
+
+.featured-card {
+  min-height: 260px;
+  padding: 28px;
+  border: 1px solid rgba(243, 194, 139, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(201, 38, 79, 0.20), transparent 36%),
+    rgba(255,255,255,0.025);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card.main {
+  background:
+    radial-gradient(circle at 82% 12%, rgba(201, 38, 79, 0.24), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.052), rgba(255,255,255,0.014));
+}
+
+.featured-card .number {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(243, 194, 139, 0.24);
+  border-radius: 50%;
+  margin-bottom: 22px;
+  color: #f3c28b;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 0.82rem;
+}
+
+.featured-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: #fff6ed;
+}
+
+.featured-card p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #d7b7a4;
+}
+
+.featured-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #f3c28b;
+}
+
+.featured-link::after {
+  content: "→";
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-section {
+    margin-top: 56px;
+  }
+}
+    
     footer {
       margin-top: 80px;
       padding-top: 32px;
@@ -616,6 +741,53 @@
     <div class="soon">Em breve</div>
   </article>
 </section>
+
+
+    <section class="featured-section">
+  <div class="featured-header">
+    <span class="featured-kicker">Em destaque no Rubi</span>
+    <h2>O portal já começou a brilhar.</h2>
+    <p>
+      Antes de abrir todas as portas, o Rubi revela seus primeiros sinais:
+      uma carta, uma promessa e um caminho para novas vozes.
+    </p>
+  </div>
+
+  <div class="featured-grid">
+    <article class="featured-card main">
+      <span class="number">01</span>
+      <h3>Carta de abertura</h3>
+      <p>
+        O Rubi Literário nasce para acolher histórias que carregam presença.
+        Não queremos apenas textos bonitos. Queremos brilho, risco, imagem,
+        verdade e memória.
+      </p>
+      <span class="featured-link">Ler em breve</span>
+    </article>
+
+    <article class="featured-card">
+      <span class="number">02</span>
+      <h3>Fragmentos do Rubi</h3>
+      <p>
+        O primeiro concurso cultural de minicontos está sendo lapidado.
+        Em breve, novas vozes poderão enviar histórias curtas para serem
+        reveladas pela curadoria.
+      </p>
+      <span class="featured-link">Acompanhar</span>
+    </article>
+
+    <article class="featured-card">
+      <span class="number">03</span>
+      <h3>Biblioteca Rubra</h3>
+      <p>
+        Uma futura galeria de obras, autores independentes, leituras marcantes
+        e achados literários apresentados com cuidado editorial.
+      </p>
+      <span class="featured-link">Explorar depois</span>
+    </article>
+  </div>
+</section>
+    
 
     
     <footer>
