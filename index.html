@@ -99,6 +99,25 @@
       border-radius: 50%;
     }
 
+    .ruby-image {
+  width: min(190px, 32vw);
+  display: block;
+  margin: 0 auto 34px;
+  filter:
+    drop-shadow(0 0 24px rgba(255, 52, 103, 0.45))
+    drop-shadow(0 0 60px rgba(153, 16, 50, 0.45));
+  animation: floatPulse 3.8s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
     @keyframes pulse {
       0%, 100% {
         transform: rotate(45deg) scale(1);
@@ -261,7 +280,7 @@
 
     <section class="hero">
       <div>
-        <div class="ruby" aria-hidden="true"></div>
+       <img src="assets/rubi.png" alt="Rubi Literário" class="ruby-image" />
 
         <h1>Rubi<br />Literário</h1>
 
