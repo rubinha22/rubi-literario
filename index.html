@@ -227,86 +227,133 @@
     }
 
     .voice-section {
-  margin-top: 40px;
-  margin-bottom: 70px;
-  padding: 28px;
-  border: 1px solid rgba(243, 194, 139, 0.18);
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
-  box-shadow: 0 18px 70px rgba(0,0,0,0.25);
+  margin-top: 34px;
+  margin-bottom: 78px;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid rgba(243, 194, 139, 0.2);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 18% 50%, rgba(201, 38, 79, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
+  box-shadow:
+    0 24px 80px rgba(0,0,0,0.32),
+    inset 0 0 0 1px rgba(255,255,255,0.025);
+  position: relative;
+  overflow: hidden;
+}
+
+.voice-section::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(243, 194, 139, 0.08);
+  border-radius: 26px;
+  pointer-events: none;
 }
 
 .voice-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 30px;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+  gap: clamp(28px, 5vw, 64px);
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .avatar-frame {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  min-height: 360px;
 }
 
 .avatar-frame::before {
   content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: min(330px, 80vw);
+  height: min(330px, 80vw);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 38, 79, 0.25), transparent 62%);
-  filter: blur(6px);
+  background:
+    radial-gradient(circle, rgba(255, 55, 105, 0.28), transparent 58%),
+    radial-gradient(circle, rgba(243, 194, 139, 0.10), transparent 68%);
+  filter: blur(7px);
+}
+
+.avatar-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  width: 78%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(243, 194, 139, 0.35), transparent);
 }
 
 .avatar-image {
   position: relative;
-  width: min(280px, 100%);
-  border-radius: 24px;
+  width: min(300px, 100%);
   display: block;
+  object-fit: contain;
   filter:
-    drop-shadow(0 0 20px rgba(255, 52, 103, 0.18))
-    drop-shadow(0 0 50px rgba(153, 16, 50, 0.2));
+    drop-shadow(0 0 22px rgba(255, 52, 103, 0.18))
+    drop-shadow(0 22px 36px rgba(0, 0, 0, 0.38));
+}
+
+.voice-content {
+  max-width: 720px;
 }
 
 .voice-tag {
   display: inline-block;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   color: #f3c28b;
 }
 
 .voice-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 4vw, 4.1rem);
   font-weight: 400;
-  line-height: 1.05;
-  margin-bottom: 18px;
+  line-height: 0.98;
+  margin-bottom: 22px;
   color: #fff2e8;
+  text-shadow: 0 0 28px rgba(208, 43, 82, 0.16);
 }
 
 .voice-quote {
-  font-size: clamp(1.35rem, 2.2vw, 2.2rem);
-  line-height: 1.2;
+  font-size: clamp(1.25rem, 2.1vw, 2rem);
+  line-height: 1.25;
   font-style: italic;
   color: #f1cfb0;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .voice-text {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.02rem;
+  line-height: 1.75;
   color: #d9b9a0;
-  max-width: 620px;
-  margin-bottom: 18px;
+  max-width: 650px;
+  margin-bottom: 22px;
 }
 
 .voice-signature {
-  font-size: 1.5rem;
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 1.55rem;
   font-style: italic;
   color: #e6a96f;
+  position: relative;
+}
+
+.voice-signature::before {
+  content: "";
+  display: inline-block;
+  width: 56px;
+  height: 1px;
+  margin-right: 14px;
+  vertical-align: middle;
+  background: rgba(230, 169, 111, 0.48);
 }
 
 @media (max-width: 900px) {
@@ -315,12 +362,20 @@
     text-align: center;
   }
 
+  .avatar-frame {
+    min-height: 310px;
+  }
+
+  .voice-content,
   .voice-text {
     margin-left: auto;
     margin-right: auto;
   }
-}
 
+  .voice-signature::before {
+    display: none;
+  }
+}
     footer {
       margin-top: 80px;
       padding-top: 32px;
@@ -394,7 +449,7 @@
       <img src="assets/avatar.png" alt="A voz do Rubi" class="avatar-image" />
     </div>
 
-    <div>
+    <div class="voice-content">
       <span class="voice-tag">A voz do Rubi</span>
       <h2 class="voice-title">Eu guardo o brilho<br>do que merece ser revelado.</h2>
 
