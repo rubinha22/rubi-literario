@@ -12,12 +12,36 @@
     {
       "src": "curadoria/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "biblioteca/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "concursos/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "autores/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
+    },
+    {
+      "src": "/biblioteca/?",
+      "dest": "/biblioteca/index.html"
+    },
+    {
+      "src": "/concursos/?",
+      "dest": "/concursos/index.html"
+    },
+    {
+      "src": "/autores/?",
+      "dest": "/autores/index.html"
     },
     {
       "src": "/curadoria/?",
