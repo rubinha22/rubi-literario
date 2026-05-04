@@ -633,12 +633,38 @@
 }
 
 @media (max-width: 560px) {
+  .featured-section {
+    padding: 28px 22px;
+  }
+
+  .featured-list {
+    gap: 0;
+  }
+
   .featured-card {
-    grid-template-columns: 1fr;
+    padding: 22px 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(243, 194, 139, 0.14);
+  }
+
+  .featured-card:last-child {
+    border-bottom: none;
+  }
+
+  .featured-card:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .featured-card .number {
+    margin-bottom: 10px;
   }
 
   .featured-link {
-    grid-column: auto;
+    margin-top: 14px;
   }
 }
     
