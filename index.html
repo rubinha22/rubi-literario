@@ -634,37 +634,33 @@
 
 @media (max-width: 560px) {
   .featured-section {
-    padding: 28px 22px;
-  }
-
-  .featured-list {
-    gap: 0;
+    padding: 26px 18px;
   }
 
   .featured-card {
+    grid-template-columns: 42px 1fr;
+    gap: 12px;
     padding: 22px 0;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    border-bottom: 1px solid rgba(243, 194, 139, 0.14);
-  }
-
-  .featured-card:last-child {
-    border-bottom: none;
-  }
-
-  .featured-card:hover {
-    transform: none;
-    background: transparent;
-    box-shadow: none;
   }
 
   .featured-card .number {
-    margin-bottom: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 0.72rem;
+  }
+
+  .featured-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .featured-content p {
+    font-size: 0.92rem;
+    line-height: 1.62;
   }
 
   .featured-link {
-    margin-top: 14px;
+    grid-column: 2;
+    margin-top: 12px;
   }
 }
     
