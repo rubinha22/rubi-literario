@@ -89,8 +89,33 @@
     }
 
     nav span {
-      opacity: 0.8;
-    }
+  opacity: 0.82;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+nav span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f3c28b, transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+nav span:hover {
+  opacity: 1;
+  color: #f3c28b;
+}
+
+nav span:hover::after {
+  transform: scaleX(1);
+}
 
     .hero {
       min-height: 58vh;
