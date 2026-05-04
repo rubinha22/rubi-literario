@@ -8,12 +8,20 @@
     {
       "src": "assets/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "curadoria/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
+    },
+    {
+      "src": "/curadoria/?",
+      "dest": "/curadoria/index.html"
     },
     {
       "src": "/",
