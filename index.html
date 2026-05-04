@@ -88,14 +88,16 @@
       color: #d9b9a0;
     }
 
-    nav span {
+    nav a {
   opacity: 0.82;
   position: relative;
   cursor: pointer;
+  color: #d9b9a0;
+  text-decoration: none;
   transition: color 0.25s ease, opacity 0.25s ease;
 }
 
-nav span::after {
+nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -108,15 +110,15 @@ nav span::after {
   transition: transform 0.25s ease;
 }
 
-nav span:hover {
+nav a:hover {
   opacity: 1;
   color: #f3c28b;
 }
 
-nav span:hover::after {
+nav a:hover::after {
   transform: scaleX(1);
 }
-
+    
     .hero {
       min-height: 58vh;
       display: grid;
